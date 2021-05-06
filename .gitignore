@@ -24,6 +24,6 @@ yarn-error.log*
 
 
 # mine
-/var
-test.js
+# /var
+# test.js
 test.css
