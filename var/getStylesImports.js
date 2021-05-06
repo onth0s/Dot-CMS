@@ -21,10 +21,16 @@ const logT = (...args) => {
 		const headerArr = el[0].toString().split('\n');
 		const header = [];
 		
-		headerArr.forEach(el => {
-			header.push(el.trim());
+		headerArr.forEach((el, i) => {
+			const temp = '\n' + el.trimgoi();
+			// if (i == 0) header.push(temp);
+			if (i == 0) console.log('ZERO');
+			console.log('NON_ZERO');
+			
+			console.log('i: ' + i);
 		});
-		
+
+		console.log(header);
 		
 		
 		console.log(i.toString().yellow, symbol + ' ' + header);
