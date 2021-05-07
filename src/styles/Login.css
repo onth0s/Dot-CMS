@@ -1,0 +1,47 @@
+.login-container {
+	flex-direction: column;
+	
+	width: 800px;
+
+	padding: 40px 20px;	
+
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+}
+
+.login-title {
+	margin-bottom: 40px;
+	width: 30%;
+}
+
+.login-form {
+	width: 100%;
+	flex-direction: column;
+}
+.login-form >:not(:last-child) {
+	margin-bottom: 20px;
+}
+.login-form > * {
+	width: 50%;
+}
+.login-form > *:last-child {
+	margin-top: 10px;
+	width: 20%;
+}
+
+@media only screen and (max-width: 600px) {
+	.login-container {
+		width: 100%;
+	}
+
+	.login-title {
+		width: 50%;
+	}
+
+	.login-form > * {
+		width: 80%;
+	}
+	.login-form > *:last-child {
+		width: 40%;
+	}
+}

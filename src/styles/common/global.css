@@ -8,10 +8,26 @@
 	box-sizing: border-box;
 }
 
-.container {
+.flexbox {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.root-container {
+	width: max-content;
+
+	margin: auto;
+	margin-top: 20px;
 	
-	background-color: pink;	
+	/* background-color: antiquewhite; */
+}
+
+@media only screen and (max-width: 600px) {
+	.root-container {
+		width: 100vw;
+	
+		padding: 0 10px;
+		margin-top: 10px;
+	}
 }

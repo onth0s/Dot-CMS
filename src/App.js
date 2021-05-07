@@ -1,15 +1,15 @@
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import Login from './pages/Login.js';
+
 function App() {
-  return (
-		<div className="container">
-			Completetly clean and empty 
-			<span
-				style={{
-					fontStyle: 'italic',
-					margin: '0 6px'
-				}}
-			>create-react-app</span>
-			template.
-		</div>
+	return (
+		<BrowserRouter>
+			<Switch>
+				<Route path="/"><Login /></Route>
+				<Route path="/login"><Login /></Route>
+			</Switch>
+		</BrowserRouter>
 	);
 }
 
