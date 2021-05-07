@@ -50,7 +50,15 @@ export default function Login() {
 								}
 							}}
 							value={username}
-							onChange={(e) => dispatch(setUsername(e.target.value))}
+							onChange={(e) => {
+								const cross = document.querySelector('.login-form-input-container > *:last-child');
+								if (e.target.value === '') {
+									cross.style.visibility = 'hidden';
+								} else {
+									cross.style.visibility = 'visible';
+								}
+								dispatch(setUsername(e.target.value));
+							}}
 						/>
 
 						<Close
@@ -59,6 +67,10 @@ export default function Login() {
 								usernameInput.focus();
 
 								dispatch(setUsername(''));
+
+								const cross = document.querySelector('.login-form-input-container > *:last-child');
+
+								cross.style.visibility = 'hidden';
 							}}
 						/>
 					</div>

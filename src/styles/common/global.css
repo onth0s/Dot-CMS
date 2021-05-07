@@ -21,6 +21,11 @@
 	background-color: var(--orange-lighest);
 }
 
+body {
+	/* background-color: #181A1B; */
+	/* background-color: #ad9780; */
+}
+
 .flexbox {
 	display: flex;
 	justify-content: center;

@@ -38,6 +38,14 @@
 	width: 20%;
 }
 
+.login-form-input-container > *:last-child {
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.login-form:first-child > *:last-child {	
+	visibility: hidden;
+}
+
 .login-form-input-container {
 	position: relative;
 }
@@ -61,7 +69,7 @@
 	width: 100%;
 }
 .login-form-input-container > * input {
-	width: calc(100% - (60px));
+	width: calc(100% - (50px));
 	/* background-color: pink; */
 }
 
