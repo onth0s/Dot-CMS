@@ -6,7 +6,7 @@ import {
 	toggleShowPassword, getShowPassword,
 } from '../redux/reducers/userCredentials.js';
 
-import { serverCall } from '../services';
+import { login } from '../services';
 
 import { Close } from '@material-ui/icons';
 import { TextField, Button } from '@material-ui/core';
@@ -23,7 +23,7 @@ export default function Login() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		serverCall('lemme login bruh');
+		login({ username, password });
 	}
 
 	return (
