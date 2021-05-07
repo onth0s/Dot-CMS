@@ -5,8 +5,7 @@ import { testAction } from '../redux/reducers/userCredentials.js';
 import { serverCall } from '../services';
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { purple } from '@material-ui/core/colors';
-
+import { Close } from '@material-ui/icons';
 import { TextField, Button } from '@material-ui/core';
 
 import { icons } from '../resources/icons.js';
@@ -26,7 +25,7 @@ export default function Login() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		serverCall('login!');
+		serverCall('lemme login!');
 
 		dispatch(testAction());
 	}
@@ -36,35 +35,59 @@ export default function Login() {
 			<div className="root-container">
 				<div className="flexbox login-container">
 					<img className="login-title"
-					src={icons.dot_logo_text} alt="Dot logo with text" />
+						src={icons.dot_logo_text} alt="Dot logo with text" />
 
 					<form className="flexbox login-form"
 						onSubmit={handleSubmit}
 					>
-						<TextField className="login-form-username"
-							id="outlined-basic" label="Username" variant="outlined"
-							autoComplete={'off'} autoFocus={true} spellCheck={false}
-							onKeyPress={(e) => {
-								if (e.code === 'Enter') {
+						<div className="login-form-input-container"
+							onLoad={() => {
+								console.log('username input loaded');
+							}}
+						>
+							<TextField className="login-form-username"
+								id="outlined-basic" label="Username" variant="outlined"
+								autoComplete={'off'} autoFocus={true} spellCheck={false}
+								onKeyPress={(e) => {
+									if (e.code === 'Enter') {
+										const passwordInput = document.querySelector('.login-form-password input');
+										passwordInput.focus();
+									}
+								}}
+							/>
+
+							<Close
+								onClick={() => {
+									const usernameInput = document.querySelector('.login-form-username input');
+									usernameInput.focus();
+
+									console.log('test');
+								}}
+							/>
+						</div>
+
+						<div className="login-form-input-container">
+							<TextField className="login-form-password"
+								id="outlined-basic" label="Password" variant="outlined"
+								autoComplete={'off'} type={'password'}
+								onKeyPress={(e) => {
+									if (e.code === 'Enter') {
+										console.log('login in...');
+									}
+								}}
+							/>
+
+							<i className="far fa-eye"
+								onClick={() => {
 									const passwordInput = document.querySelector('.login-form-password input');
 									passwordInput.focus();
-								}
-							}}
-						/>
-						<TextField className="login-form-password"
-							id="outlined-basic" label="Password" variant="outlined"
-							autoComplete={'off'} type={'password'}
-							onKeyPress={(e) => {
-								if (e.code === 'Enter') {
-									console.log('login in...');
-								}
-							}}
-						/>
+								}}
+							></i>
+						</div>
 
 						<Button variant="contained"
 							onClick={handleSubmit}
 							color="primary"
-						// classes={classes}
 						>Login</Button>
 					</form>
 				</div>

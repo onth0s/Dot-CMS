@@ -29,6 +29,33 @@
 	width: 20%;
 }
 
+.login-form-input-container {
+	position: relative;
+}
+.login-form-input-container > *:last-child {
+	width: 40px;
+	height: auto;
+	
+	position: absolute;
+	top: 50%;
+	right: 0;
+
+	transform: translateY(-50%);
+
+	padding: 10px;
+
+	/* background-color: aqua; */
+	
+	cursor: pointer;
+}
+.login-form-input-container > * {
+	width: 100%;
+}
+.login-form-input-container > * input {
+	width: calc(100% - (60px));
+	/* background-color: pink; */
+}
+
 @media only screen and (max-width: 600px) {
 	.login-container {
 		width: 100%;
