@@ -10,8 +10,17 @@
 }
 
 .login-title {
+	position: relative;
+
 	margin-bottom: 40px;
 	width: 30%;
+}
+.login-title > p {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	color: var(--orange);
 }
 
 .login-form {
@@ -63,6 +72,9 @@
 
 	.login-title {
 		width: 50%;
+	}
+	.login-title > p {
+		right: -8px;
 	}
 
 	.login-form > * {

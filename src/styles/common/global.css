@@ -1,3 +1,7 @@
+:root {
+	--orange: #EC6408;
+}
+
 * {
 	margin:  0;
 	padding: 0;

@@ -34,8 +34,10 @@ export default function Login() {
 		<ThemeProvider theme={theme}>
 			<div className="root-container">
 				<div className="flexbox login-container">
-					<img className="login-title"
-						src={icons.dot_logo_text} alt="Dot logo with text" />
+					<div className="login-title">
+						<img src={icons.dot_logo_text} alt="Dot logo with text" />
+						<p>CMS</p>
+					</div>
 
 					<form className="flexbox login-form"
 						onSubmit={handleSubmit}
