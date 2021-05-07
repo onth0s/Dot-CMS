@@ -3,22 +3,39 @@ import { createSlice } from "@reduxjs/toolkit";
 const { actions, reducer } = createSlice({
 	name: 'userCredentials-name',
 	initialState: {
-		name: '',
-		isLoading: false
+		username: '',
+		password: '',
+
+		showPassword: false,
 	},
 	reducers: {
-		testAction: () => {
-			console.log('EUREKA THIS IS WORKING');
+		setUsername: (state, { payload }) => {
+			state.username = payload;
 		},
-		setName: (state, { payload }) => {
-			state.name = payload
+		setPassword: (state, { payload }) => {
+			state.password = payload;
 		},
-		setLoader: (state, { payload }) => {
-			state.isLoading = payload
+
+		toggleShowPassword: (state) => {
+			state.showPassword = !state.showPassword;
 		}
 	}
 })
 
+export const getUsername = (state) => {
+	return state.userCredentials.username;
+}
+export const getPassword = (state) => {
+	return state.userCredentials.password;
+}
+
+export const getShowPassword = (state) => {
+	return state.userCredentials.showPassword;
+}
+
 export default reducer;
 
-export const { setName, setLoader, testAction } = actions;
+export const {
+	setUsername, setPassword,
+	toggleShowPassword
+} = actions;

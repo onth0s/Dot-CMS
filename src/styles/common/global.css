@@ -1,5 +1,6 @@
 :root {
 	--orange: #EC6408;
+	--orange-lighest: #ffdcc4;
 }
 
 * {
@@ -11,7 +12,13 @@
 	
 	box-sizing: border-box;
 
+	user-select: none;
+
 	overscroll-behavior: none;
+}
+
+::selection {
+	background-color: var(--orange-lighest);
 }
 
 .flexbox {
