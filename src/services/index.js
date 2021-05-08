@@ -7,7 +7,6 @@ const SERVER_URL = 'https://dot-dot.herokuapp.com/';
 export const login = async (userCredentials) => {
 	const getIPPath = 'https://api.db-ip.com/v2/free/self';
 	let IP = '';
-
 	
 	try {
 		const res = await axios({
@@ -31,6 +30,8 @@ export const login = async (userCredentials) => {
 			}
 		});
 		
+		console.log(res);
+
 		return res;
 	} catch (err) {
 		console.log('Axios Error logging user in:');

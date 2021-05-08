@@ -1,3 +1,5 @@
+import { useHistory } from 'react-router-dom';
+
 import { useSelector, useDispatch } from 'react-redux';
 
 import {
@@ -16,6 +18,8 @@ import { icons } from '../resources/icons.js';
 import { store } from 'react-notifications-component';
 
 export default function Login() {
+	const history = useHistory();
+
 	const username = useSelector(getUsername);
 	const password = useSelector(getPassword);
 	const showPassword = useSelector(getShowPassword);
@@ -55,7 +59,6 @@ export default function Login() {
 		} else {
 			const res = await login({ username, password });
 
-			console.log(res);
 			if (res) {
 				if (res.status === 200 && res.data !== 'Wrong credentials') {
 					store.addNotification({
@@ -63,6 +66,10 @@ export default function Login() {
 						title: "Success!",
 						message: "Logging in...",
 					});
+
+					setTimeout(() => {
+						history.push('/home');
+					}, 4000);
 				} else {
 					store.addNotification({
 						...notificationSettings,
@@ -71,6 +78,13 @@ export default function Login() {
 						type: 'danger'
 					});
 				}
+			} else {
+				store.addNotification({
+					...notificationSettings,
+					title: "Error",
+					message: "Unexpected Error",
+					type: 'danger'
+				});
 			}
 		}
 	}
