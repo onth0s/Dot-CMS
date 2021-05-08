@@ -12,6 +12,10 @@ import './styles/Login.css';
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
+import ReactNotification from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css';
+import 'animate.css/animate.min.css';
+
 const theme = createMuiTheme({
 	palette: {
 		primary: {
@@ -24,6 +28,7 @@ ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>
 			<ThemeProvider theme={theme}>
+				<ReactNotification className="test-test-test" />
 				<App />
 			</ThemeProvider>
 		</Provider>,

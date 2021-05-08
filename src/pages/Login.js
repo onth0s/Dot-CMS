@@ -13,6 +13,8 @@ import { TextField, Button } from '@material-ui/core';
 
 import { icons } from '../resources/icons.js';
 
+import { store } from 'react-notifications-component';
+
 export default function Login() {
 	const username = useSelector(getUsername);
 	const password = useSelector(getPassword);
@@ -20,10 +22,57 @@ export default function Login() {
 
 	const dispatch = useDispatch();
 
-	const handleSubmit = (e) => {
+	const notificationSettings = {
+		type: "info",
+		insert: "top",
+		container: "bottom-left",
+		animationIn: ["animate__animated", "animate__slideInLeft"],
+		animationOut: ["animate__animated", "animate__fadeOut"],
+		dismiss: {
+			duration: 4000,
+			onScreen: true,
+			pauseOnHover: true,
+		},
+	}
+
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		login({ username, password });
+		if (username === '') {
+			store.addNotification({
+				...notificationSettings,
+				title: "Can't log in",
+				message: "The username can't be empty.",
+				type: 'danger'
+			});
+		} else if (password === '') {
+			store.addNotification({
+				...notificationSettings,
+				title: "Can't log in",
+				message: "The password can't be empty.",
+				type: 'danger'
+			});
+		} else {
+			const res = await login({ username, password });
+
+			console.log(res);
+			if (res) {
+				if (res.status === 200 && res.data !== 'Wrong credentials') {
+					store.addNotification({
+						...notificationSettings,
+						title: "Success!",
+						message: "Logging in...",
+					});
+				} else {
+					store.addNotification({
+						...notificationSettings,
+						title: "Wrong!",
+						message: "Incorrect user or password.",
+						type: 'danger'
+					});
+				}
+			}
+		}
 	}
 
 	return (
@@ -41,7 +90,7 @@ export default function Login() {
 						}}
 					>
 						<TextField className="login-form-username"
-							id="outlined-basic" label="Username" variant="outlined"
+							label="Username" variant="outlined"
 							autoComplete={'off'} autoFocus={true} spellCheck={false}
 							onKeyPress={(e) => {
 								if (e.code === 'Enter') {
@@ -77,14 +126,14 @@ export default function Login() {
 
 					<div className="login-form-input-container">
 						<TextField className="login-form-password"
-							id="outlined-basic" label="Password" variant="outlined"
+							label="Password" variant="outlined"
 							autoComplete={'off'} spellCheck={false}
 							type={
 								showPassword ? 'text' : 'password'
 							}
 							onKeyPress={(e) => {
 								if (e.code === 'Enter') {
-									console.log('login in...');
+									handleSubmit(e);
 								}
 							}}
 							value={password}
