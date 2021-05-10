@@ -29,6 +29,16 @@ body {
 	/* background-color: #beaa94; */
 }
 
+.container {
+	flex-direction: column;
+
+	
+	padding: 40px 20px;	
+
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+}
+
 .flexbox {
 	display: flex;
 	justify-content: center;
@@ -38,6 +48,8 @@ body {
 .root-container {
 	width: max-content;
 
+	position: relative;
+	
 	margin: auto;
 	margin-top: 20px;
 }

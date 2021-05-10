@@ -8,7 +8,9 @@ import App from './App';
 
 import './styles/common/global.css';
 import './styles/common/fonts.css';
+import './styles/common/dev.css';
 import './styles/Login.css';
+import './styles/Home.css';
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -31,7 +33,7 @@ ReactDOM.render(
 				<ReactNotification className="test-test-test" />
 				<App />
 			</ThemeProvider>
-		</Provider>,
+		</Provider>
   </React.StrictMode>,
 	document.getElementById('root')
 );

@@ -16,6 +16,7 @@ import { TextField, Button } from '@material-ui/core';
 import { icons } from '../resources/icons.js';
 
 import { store } from 'react-notifications-component';
+import DevSkip from '../components/DevSkip.js';
 
 export default function Login() {
 	const history = useHistory();
@@ -91,18 +92,19 @@ export default function Login() {
 
 	return (
 		<div className="root-container">
-			<div className="flexbox login-container">
+			{/* TODO ↓ remove this */}
+			<DevSkip route={'/home/'}/>
+			
+			<div className="
+				flexbox container 
+				login-container">
 				<div className="login-title">
 					<img src={icons.dot_logo_text} alt="Dot logo with text" />
 					<p>CMS</p>
 				</div>
 
 				<form className="flexbox login-form" onSubmit={handleSubmit}>
-					<div className="login-form-input-container"
-						onLoad={() => {
-							console.log('username input loaded');
-						}}
-					>
+					<div className="login-form-input-container">
 						<TextField className="login-form-username"
 							label="Username" variant="outlined"
 							autoComplete={'off'} autoFocus={true} spellCheck={false}
