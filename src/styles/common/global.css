@@ -24,10 +24,10 @@
 	background-color: var(--orange-lighest);
 }
 
-body {
-	/* background-color: #181A1B; */
-	/* background-color: #beaa94; */
-}
+/* body {
+	background-color: #181A1B;
+	background-color: #beaa94;
+} */
 
 .container {
 	flex-direction: column;
