@@ -33,7 +33,7 @@ export default function Home() {
 		'Fábula',
 		'Actualidad',
 	]
-	
+
 	return (
 		<div className="root-container">
 			<div className="
@@ -76,7 +76,7 @@ export default function Home() {
 
 							<Divider />
 							<MenuItem onClick={handleClose}>
-								
+
 								<p>Logout</p>
 							</MenuItem>
 						</Menu>
@@ -86,12 +86,14 @@ export default function Home() {
 						{genreList.map((el, i) => (
 							<div className="home-column-list-item" key={i}
 								style={{
-									marginTop: 100 * i +'px'
+									marginTop: 100 * i + 'px'
 								}}
 								onMouseEnter={(e) => {
 									// e.target.style.backgroundColor = 'red';
-									e.target.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.4)';
-									e.target.style.zIndex = '99';
+									e.target.style.boxShadow = i % 2 == 0
+										? '0 0 10px rgba(0, 0, 0, 0.4)'
+										: '0 0 10px rgba(0, 0, 0, 0.2)'; 
+										e.target.style.zIndex = '99';
 								}}
 								onMouseLeave={(e) => {
 									// e.target.style.backgroundColor = 'red';
