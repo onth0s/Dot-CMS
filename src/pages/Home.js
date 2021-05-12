@@ -84,7 +84,24 @@ export default function Home() {
 
 					<div className="home-column-list">
 						{genreList.map((el, i) => (
-							<div className="home-column-list-item" key={i}>
+							<div className="home-column-list-item" key={i}
+								style={{
+									marginTop: 100 * i +'px'
+								}}
+								onMouseEnter={(e) => {
+									// e.target.style.backgroundColor = 'red';
+									e.target.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.4)';
+									e.target.style.zIndex = '99';
+								}}
+								onMouseLeave={(e) => {
+									// e.target.style.backgroundColor = 'red';
+									e.target.style.boxShadow = 'none';
+									e.target.style.zIndex = 'auto';
+								}}
+								onClick={() => {
+									console.log('item clicked (' + i + ')');
+								}}
+							>
 								{el}
 							</div>
 						))}

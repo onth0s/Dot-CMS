@@ -101,32 +101,26 @@
 .home-column-list {
 	flex-grow: 1;
 	
+	position: relative;
+	
 	/* background-color: aqua; */
 	
 	/* overflow: auto; */
 }
 
 .home-column-list-item {
+	width: 100%;
 	height: 100px;
-
-	position: relative;
+	
+	position: absolute;
+	top: 0;
 	
 	padding: 10px;
 	
-	z-index: 10;
-	
 	transition: box-shadow 0.1s;
-}
-.home-column-list-item:hover {
-	/* border: 1px solid blue; */
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-	/* box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.4); */
-	/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+	
+	cursor: pointer;
 }
 .home-column-list-item:nth-child(odd) {
 	background-color: var(--grey-lightest);	
-}
-.home-column-list-item:nth-child(even) {
-	background-color: var(--white);	
-	/* background-color: var(--grey-lightest);	 */
 }
