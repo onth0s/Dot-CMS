@@ -6,9 +6,21 @@ export default function Home() {
 				home-container
 			">
 				<div className="home-column home-main">
-					<p>
-						Now, I am become Death, the destroyer of worlds.
-					</p>
+					<div className="home-column-header">
+						<div className="flexbox home-column-header-image-container">
+							<img id="home-column-header-image" className="box-shadow-soft"
+								src="https://via.placeholder.com/100x100" alt="user profile" 
+							/>
+						</div>
+						
+						<div className="">
+							
+						</div>
+					</div>
+
+					<div className="home-column-list">
+
+					</div>
 				</div>
 
 				<div className="home-content home-main">

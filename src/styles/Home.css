@@ -17,8 +17,7 @@
 	
 }
 .home-column {
-	min-width: 200px;
-	max-width: 300px;
+	width: 300px;
 	
 	padding-right: 10px;
 	margin-right: 10px;
@@ -29,4 +28,29 @@
 .home-content {
 	flex-grow: 1;
 	/* background-color: pink; */
+}
+
+.home-column-header {
+	height: calc(120px + 10px);
+	
+	padding-bottom: 10px;
+	
+	background-color: rgb(255, 252, 208);	
+	border-bottom: 1px solid var(--grey-light);
+}
+
+.home-column-header-image-container {
+	align-items: center;
+
+	width: 100px;
+	height: 100%;
+	
+	padding: 0 0 0 20px;
+	
+	/* background-color: pink; */
+}
+#home-column-header-image {
+	width: 100%;
+	
+	border-radius: 100%;
 }
