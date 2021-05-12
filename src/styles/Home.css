@@ -127,3 +127,10 @@
 .home-column-list-item:nth-child(odd) {
 	background-color: var(--grey-lightest);	
 }
+
+
+
+
+.home-content {
+	background-color: pink;
+}

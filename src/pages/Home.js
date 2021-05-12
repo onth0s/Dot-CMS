@@ -4,6 +4,8 @@ import { Button, Menu, MenuItem, Divider } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
+import HomeTabs from '../components/HomeTabs.js';
+
 const useStyles = makeStyles({
 	root: {
 		width: '30px',
@@ -89,14 +91,12 @@ export default function Home() {
 									marginTop: 100 * i + 'px'
 								}}
 								onMouseEnter={(e) => {
-									// e.target.style.backgroundColor = 'red';
 									e.target.style.boxShadow = i % 2 == 0
 										? '0 0 10px rgba(0, 0, 0, 0.4)'
-										: '0 0 10px rgba(0, 0, 0, 0.2)'; 
-										e.target.style.zIndex = '2';
+										: '0 0 10px rgba(0, 0, 0, 0.2)';
+									e.target.style.zIndex = '2';
 								}}
 								onMouseLeave={(e) => {
-									// e.target.style.backgroundColor = 'red';
 									e.target.style.boxShadow = 'none';
 									e.target.style.zIndex = 'auto';
 								}}
@@ -110,11 +110,7 @@ export default function Home() {
 					</div>
 				</div>
 
-				<div className="home-content home-main">
-					<p>
-						Now, I am become Death, the destroyer of worlds.
-					</p>
-				</div>
+				<HomeTabs />
 			</div>
 		</div>
 	);
