@@ -91,7 +91,7 @@ export default function Home() {
 									marginTop: 100 * i + 'px'
 								}}
 								onMouseEnter={(e) => {
-									e.target.style.boxShadow = i % 2 == 0
+									e.target.style.boxShadow = i % 2 === 0
 										? '0 0 10px rgba(0, 0, 0, 0.4)'
 										: '0 0 10px rgba(0, 0, 0, 0.2)';
 									e.target.style.zIndex = '2';
