@@ -61,28 +61,9 @@
 
 #home-column-header-menu-icon {
 	position: absolute;
-	top:   15px;
-	right: 20px;
+	top:   10px;
+	right: 10px;
 	
-	border: 1px solid blue;
+	/* border: 1px solid blue; */
 	/* background-color: pink; */
 }
-/* #home-column-header-menu-icon {
-	width: 10px !important;
-	min-width: none !important;
-	
-	position: absolute;
-	top:   15px;
-	right: 20px;
-	
-	padding: 0;
-	
-	background-color: pink;
-}
-#home-column-header-menu-icon > span {
-	min-width: none !important;
-	
-	width: max-content !important;
-	padding: 0;
-	margin: 0;
-} */
