@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Button, Menu, MenuItem } from '@material-ui/core';
+import { Button, Menu, MenuItem, Divider } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -22,6 +22,18 @@ export default function Home() {
 	const handleClose = () => setAnchorEl(null);
 	const [anchorEl, setAnchorEl] = useState(null);
 
+	const genreList = [
+		'Romance',
+		'Drama',
+		'Fantasía',
+		'Comedia',
+		'Sci-Fi',
+		'Histórica',
+		'Suspense',
+		'Fábula',
+		'Actualidad',
+	]
+	
 	return (
 		<div className="root-container">
 			<div className="
@@ -29,15 +41,17 @@ export default function Home() {
 				home-container
 			">
 				<div className="home-column home-main">
-					<div className="home-column-header">
+					<div className="flexbox home-column-header">
 						<div className="flexbox home-column-header-image-container">
 							<img id="home-column-header-image" className="box-shadow-soft"
 								src="https://via.placeholder.com/100x100" alt="user profile"
 							/>
 						</div>
 
-						<div className="">
-
+						<div className="flexbox home-column-header-info">
+							<p id="home-column-header-info-name">Nombre Completo Aquí</p>
+							{/* <p id="home-column-header-info-name">Nombre Completo Aquí</p> */}
+							<p id="home-column-header-info-subtitle">Lorem ipsum dolor sit amet </p>
 						</div>
 
 						<Button id="home-column-header-menu-icon"
@@ -52,14 +66,28 @@ export default function Home() {
 							open={Boolean(anchorEl)}
 							onClose={handleClose}
 						>
-							<MenuItem onClick={handleClose}>Profile</MenuItem>
-							<MenuItem onClick={handleClose}>My account</MenuItem>
-							<MenuItem onClick={handleClose}>Logout</MenuItem>
+							<MenuItem onClick={handleClose}>
+								<p>Profile</p>
+							</MenuItem>
+
+							<MenuItem onClick={handleClose}>
+								<p>My account</p>
+							</MenuItem>
+
+							<Divider />
+							<MenuItem onClick={handleClose}>
+								
+								<p>Logout</p>
+							</MenuItem>
 						</Menu>
 					</div>
 
 					<div className="home-column-list">
-
+						{genreList.map((el, i) => (
+							<div className="home-column-list-item" key={i}>
+								{el}
+							</div>
+						))}
 					</div>
 				</div>
 
