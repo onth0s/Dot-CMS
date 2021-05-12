@@ -33,6 +33,8 @@
 .home-column-header {
 	height: calc(120px + 10px);
 	
+	position: relative;
+
 	padding-bottom: 10px;
 	
 	background-color: rgb(255, 252, 208);	
@@ -54,3 +56,33 @@
 	
 	border-radius: 100%;
 }
+
+
+
+#home-column-header-menu-icon {
+	position: absolute;
+	top:   15px;
+	right: 20px;
+	
+	border: 1px solid blue;
+	/* background-color: pink; */
+}
+/* #home-column-header-menu-icon {
+	width: 10px !important;
+	min-width: none !important;
+	
+	position: absolute;
+	top:   15px;
+	right: 20px;
+	
+	padding: 0;
+	
+	background-color: pink;
+}
+#home-column-header-menu-icon > span {
+	min-width: none !important;
+	
+	width: max-content !important;
+	padding: 0;
+	margin: 0;
+} */
