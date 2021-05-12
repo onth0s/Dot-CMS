@@ -93,7 +93,7 @@ export default function Home() {
 									e.target.style.boxShadow = i % 2 == 0
 										? '0 0 10px rgba(0, 0, 0, 0.4)'
 										: '0 0 10px rgba(0, 0, 0, 0.2)'; 
-										e.target.style.zIndex = '99';
+										e.target.style.zIndex = '2';
 								}}
 								onMouseLeave={(e) => {
 									// e.target.style.backgroundColor = 'red';
