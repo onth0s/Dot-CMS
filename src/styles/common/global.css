@@ -4,6 +4,9 @@
 	--orange-lighest: #ffdcc4;
 
 	--red: #ec0808;
+	
+	--grey: #888888;
+	--grey-light: #bdbdbd;
 }
 
 * {
@@ -32,7 +35,6 @@
 .container {
 	flex-direction: column;
 
-	
 	padding: 40px 20px;	
 
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

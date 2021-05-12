@@ -1,5 +1,32 @@
 .home-container {
-	width: calc(100vw - (20px * 2));
+	flex-direction: row;
 	
+	width: calc(100vw - (20px * 2));
+	height: calc(100vh - (20px * 2));
+	
+	padding: 10px;
 	margin: 0 20px;
+	
+	/* background-color: rgb(255, 199, 191); */
+	
+	/* overflow: hidden; */
+}
+
+.home-main {
+	height: 100%;
+	
+}
+.home-column {
+	min-width: 200px;
+	max-width: 300px;
+	
+	padding-right: 10px;
+	margin-right: 10px;
+	
+	border-right: 1px solid var(--grey-light);
+	/* background-color: antiquewhite; */
+}
+.home-content {
+	flex-grow: 1;
+	/* background-color: pink; */
 }

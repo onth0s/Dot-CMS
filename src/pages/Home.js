@@ -5,9 +5,17 @@ export default function Home() {
 				flexbox container 
 				home-container
 			">
-				<p>
-					Now, I am become Death, the destroyer of worlds.
-				</p>
+				<div className="home-column home-main">
+					<p>
+						Now, I am become Death, the destroyer of worlds.
+					</p>
+				</div>
+
+				<div className="home-content home-main">
+					<p>
+						Now, I am become Death, the destroyer of worlds.
+					</p>
+				</div>
 			</div>
 		</div>
 	);
