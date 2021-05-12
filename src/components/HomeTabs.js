@@ -44,7 +44,8 @@ const useStyles = makeStyles((theme) => ({
 		height: '100%',
 	},
 	test: {
-		backgroundColor: 'var(--grey-light)',
+		color: 'black',
+		backgroundColor: 'var(--grey-lighter)',
 		borderRadius: 10,
 	}
 }));
