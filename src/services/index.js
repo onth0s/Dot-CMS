@@ -4,14 +4,14 @@ import joinURL from 'url-join';
 const SERVER_URL = 'https://dot-dot.herokuapp.com/';
 // const SERVER_URL = 'http://localhost:8080';
 
-let counterLogin = 0;
+// let counterLogin = 0;
 export const login = async (userCredentials) => {
 	const getIPPath = 'https://api.db-ip.com/v2/free/self';
 	let IP = '';
 
-	let res = null;
+	// let res = null;
 
-	let requestData = null;
+	// let requestData = null;
 	
 	try {
 		const res = await axios({
@@ -25,36 +25,38 @@ export const login = async (userCredentials) => {
 		console.log(err);
 	}
 	
-	try {
-		axios.interceptors.request.use(request => {
-			// to avoid overwriting if another interceptor
-			// already defined the same object (meta)
-			request.meta = request.meta || {};
+	// try {
+	// 	axios.interceptors.request.use(request => {
+	// 		// to avoid overwriting if another interceptor
+	// 		// already defined the same object (meta)
+	// 		request.meta = request.meta || {};
 			
-			request.meta.requestStartedAt = new Date().getTime();
+	// 		request.meta.requestStartedAt = new Date().getTime();
 			
-			console.log('login() request.meta:');
-			console.log(request.meta);
+	// 		// TODO ↓
+	// 		// console.log('login() request.meta:');
+	// 		// console.log(request.meta);
 			
-			requestData = request;
+	// 		// requestData = request;
 			
-			counterLogin++;
-			console.log('counterLogin:', counterLogin);
+	// 		counterLogin++;
+	// 		console.log('counterLogin:', counterLogin);
 			
-			// return {
-			// 	test: 'some message'
-			// };
-			// return request.meta;
+	// 		// return {
+	// 		// 	test: 'some message'
+	// 		// };
+	// 		// return request.meta;
 			
-		})
-	} catch (err) {
-		console.log('Axios Error intercepting request:');
-		console.log(err);
-	}
+	// 	})
+	// } catch (err) {
+	// 	console.log('Axios Error intercepting request:');
+	// 	console.log(err);
+	// }
 	
 
 	try {
 		const response = await axios({
+		// await axios({
 			method: 'POST',
 			url: joinURL(SERVER_URL, 'CMS/login'),
 			data: {
@@ -63,19 +65,23 @@ export const login = async (userCredentials) => {
 			}
 		});
 
-		console.log('res:');
-		console.log(res);
+		console.log('login() userCredentials:');
+		console.log(userCredentials);
+		
+		console.log('login() response:');
+		console.log(response);
 
-		// return res;
-		res = response;
+		return response;
+		// res = response;
 		// return { res, requestData };
 	} catch (err) {
 		console.log('Axios Error logging user in:');
 		console.log(err);
 	}
 	
-	return {
-		res, 
-		requestedAt: requestData.meta.requestStartedAt
-	};
+	// TODO 
+	// return {
+	// 	res, 
+	// 	requestedAt: requestData.meta.requestStartedAt
+	// };
 }

@@ -58,46 +58,45 @@ export default function Login() {
 				type: 'danger'
 			});
 		} else {
-			const res2 = await login({ username, password });
-			console.log('res2:');
-			console.log(res2);
+			// const res2 = await login({ username, password });
+			const res = await login({ username, password });
+			// console.log('res2:');
+			// console.log(res2);
 			
 			// const { res, requestData } = await login({ username, password });
 
-			
-			
-			// console.log('res:');
-			// console.log(res);
+			console.log('res:');
+			console.log(res);
 			// console.log('requestData:');
 			// console.log(requestData);
 
-			// if (res) {
-			// 	if (res.status === 200 && res.data !== 'Wrong credentials') {
-			// 		store.addNotification({
-			// 			...notificationSettings,
-			// 			title: "Success!",
-			// 			message: "Logging in...",
-			// 		});
+			if (res) {
+				if (res.status === 200 && res.data !== 'Wrong credentials') {
+					store.addNotification({
+						...notificationSettings,
+						title: "Success!",
+						message: "Logging in...",
+					});
 
-			// 		setTimeout(() => {
-			// 			history.push('/home');
-			// 		}, 4000);
-			// 	} else {
-			// 		store.addNotification({
-			// 			...notificationSettings,
-			// 			title: "Wrong!",
-			// 			message: "Incorrect user or password.",
-			// 			type: 'danger'
-			// 		});
-			// 	}
-			// } else {
-			// 	store.addNotification({
-			// 		...notificationSettings,
-			// 		title: "Error",
-			// 		message: "Unexpected Error",
-			// 		type: 'danger'
-			// 	});
-			// }
+					setTimeout(() => {
+						history.push('/home');
+					}, 4000);
+				} else {
+					store.addNotification({
+						...notificationSettings,
+						title: "Wrong!",
+						message: "Incorrect user or password.",
+						type: 'danger'
+					});
+				}
+			} else {
+				store.addNotification({
+					...notificationSettings,
+					title: "Error",
+					message: "Unexpected Error",
+					type: 'danger'
+				});
+			}
 		}
 	}
 

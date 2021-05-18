@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router';
 
 import { Button, Menu, MenuItem, Divider } from '@material-ui/core';
 
@@ -18,6 +19,8 @@ const useStyles = makeStyles({
 });
 
 export default function Home() {
+	const history = useHistory();
+	
 	const classes = useStyles();
 
 	const handleClick = (e) => setAnchorEl(e.currentTarget);
@@ -77,7 +80,11 @@ export default function Home() {
 							</MenuItem>
 
 							<Divider />
-							<MenuItem onClick={handleClose}>
+							<MenuItem onClick={() => {
+								history.push('/login');
+								
+								handleClose();
+							}}>
 
 								<p>Logout</p>
 							</MenuItem>
@@ -91,7 +98,7 @@ export default function Home() {
 									marginTop: 100 * i + 'px'
 								}}
 								onMouseEnter={(e) => {
-									e.target.style.boxShadow = i % 2 == 0
+									e.target.style.boxShadow = i % 2 === 0
 										? '0 0 10px rgba(0, 0, 0, 0.4)'
 										: '0 0 10px rgba(0, 0, 0, 0.2)';
 									e.target.style.zIndex = '2';
