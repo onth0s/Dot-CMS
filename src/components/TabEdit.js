@@ -1,7 +1,10 @@
 export default () => {
 	return (
-		<div>
-			asdfasfadsf
+		<div className="
+			flexbox tab-edit-container
+		">
+			<div>SGSDG</div>
+			<div>bdafb</div>
 		</div>
 	);
 }

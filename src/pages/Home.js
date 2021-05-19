@@ -55,7 +55,6 @@ export default function Home() {
 
 						<div className="flexbox home-column-header-info">
 							<p id="home-column-header-info-name">Nombre Completo Aquí</p>
-							{/* <p id="home-column-header-info-name">Nombre Completo Aquí</p> */}
 							<p id="home-column-header-info-subtitle">Lorem ipsum dolor sit amet </p>
 						</div>
 

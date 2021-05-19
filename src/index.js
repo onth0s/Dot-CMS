@@ -11,6 +11,7 @@ import './styles/common/fonts.css';
 import './styles/common/dev.css';
 import './styles/Login.css';
 import './styles/Home.css';
+import './styles/TabEdit.css';
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
