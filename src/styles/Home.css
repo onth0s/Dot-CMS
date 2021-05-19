@@ -123,12 +123,9 @@
 	transition: box-shadow 0.1s;
 	
 	border: 1px solid transparent;
-	border-radius: 15px;
+	/* border-radius: 15px; */
 	
 	cursor: pointer;
-}
-.home-column-list-item:first-of-type {
-	border: 1px solid var(--orange);
 }
 .home-column-list-item:nth-child(odd) {
 	background-color: var(--grey-lightest);	

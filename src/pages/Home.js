@@ -28,15 +28,15 @@ export default function Home() {
 	const [anchorEl, setAnchorEl] = useState(null);
 
 	const genreList = [
-		'Romance',
-		'Drama',
-		'Fantasía',
-		'Comedia',
-		'Sci-Fi',
-		'Histórica',
-		'Suspense',
-		'Fábula',
-		'Actualidad',
+		{ genre: 'Romance', selected: true },
+		{ genre: 'Drama', selected: false },
+		{ genre: 'Fantasía', selected: false },
+		{ genre: 'Comedia', selected: false },
+		{ genre: 'Sci-Fi', selected: false },
+		{ genre: 'Histórica', selected: false },
+		{ genre: 'Suspense', selected: false },
+		{ genre: 'Fábula', selected: false },
+		{ genre: 'Actualidad', selected: false }
 	]
 
 	return (
@@ -91,28 +91,32 @@ export default function Home() {
 					</div>
 
 					<div className="home-column-list">
-						{genreList.map((el, i) => (
-							<div className="home-column-list-item" key={i}
-								style={{
-									marginTop: 100 * i + 'px'
-								}}
-								onMouseEnter={(e) => {
-									e.target.style.boxShadow = i % 2 === 0
-										? '0 0 10px rgba(0, 0, 0, 0.4)'
-										: '0 0 10px rgba(0, 0, 0, 0.2)';
-									e.target.style.zIndex = '2';
-								}}
-								onMouseLeave={(e) => {
-									e.target.style.boxShadow = 'none';
-									e.target.style.zIndex = 'auto';
-								}}
-								onClick={() => {
-									console.log('item clicked (' + i + ')');
-								}}
-							>
-								{el}
-							</div>
-						))}
+						{genreList.map((el, i) => {
+							
+							
+							return (
+								<div className="home-column-list-item" key={i}
+									style={{
+										marginTop: 100 * i + 'px'
+									}}
+									onMouseEnter={(e) => {
+										e.target.style.boxShadow = i % 2 === 0
+											? '0 0 10px rgba(0, 0, 0, 0.4)'
+											: '0 0 10px rgba(0, 0, 0, 0.2)';
+										e.target.style.zIndex = '2';
+									}}
+									onMouseLeave={(e) => {
+										e.target.style.boxShadow = 'none';
+										e.target.style.zIndex = 'auto';
+									}}
+									onClick={() => {
+										console.log('item clicked (' + i + ')');
+									}}
+								>
+									{el.genre}
+								</div>
+							)
+						})}
 					</div>
 				</div>
 
