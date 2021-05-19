@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 
 export default function Home() {
 	const history = useHistory();
-	
+
 	const classes = useStyles();
 
 	const handleClick = (e) => setAnchorEl(e.currentTarget);
@@ -28,16 +28,17 @@ export default function Home() {
 	const [anchorEl, setAnchorEl] = useState(null);
 
 	const genreList = [
-		{ genre: 'Romance', selected: true },
-		{ genre: 'Drama', selected: false },
-		{ genre: 'Fantasía', selected: false },
-		{ genre: 'Comedia', selected: false },
-		{ genre: 'Sci-Fi', selected: false },
-		{ genre: 'Histórica', selected: false },
-		{ genre: 'Suspense', selected: false },
-		{ genre: 'Fábula', selected: false },
-		{ genre: 'Actualidad', selected: false }
+		'Romance',
+		'Drama',
+		'Fantasía',
+		'Comedia',
+		'Sci-Fi',
+		'Histórica',
+		'Suspense',
+		'Fábula',
+		'Actualidad',
 	]
+	const [genreSelected, setGenreSelected] = useState(0);
 
 	return (
 		<div className="root-container">
@@ -70,35 +71,32 @@ export default function Home() {
 							open={Boolean(anchorEl)}
 							onClose={handleClose}
 						>
-							<MenuItem onClick={handleClose}>
-								<p>Profile</p>
-							</MenuItem>
+							<MenuItem onClick={handleClose}><p>Profile</p></MenuItem>
 
-							<MenuItem onClick={handleClose}>
-								<p>My account</p>
-							</MenuItem>
+							<MenuItem onClick={handleClose}><p>My account</p></MenuItem>
 
 							<Divider />
 							<MenuItem onClick={() => {
 								history.push('/login');
-								
-								handleClose();
-							}}>
 
-								<p>Logout</p>
-							</MenuItem>
+								handleClose();
+							}}><p>Logout</p></MenuItem>
 						</Menu>
 					</div>
 
 					<div className="home-column-list">
 						{genreList.map((el, i) => {
-							
-							
+							const styles = {
+								marginTop: 100 * i + 'px',
+							}
+							// if (i === genreSelected) {
+							// 	console.log(el + ' is selected');
+							// }
+							if (i === genreSelected) styles.borderColor = 'var(--orange)';
+
 							return (
 								<div className="home-column-list-item" key={i}
-									style={{
-										marginTop: 100 * i + 'px'
-									}}
+									style={styles}
 									onMouseEnter={(e) => {
 										e.target.style.boxShadow = i % 2 === 0
 											? '0 0 10px rgba(0, 0, 0, 0.4)'
@@ -109,18 +107,18 @@ export default function Home() {
 										e.target.style.boxShadow = 'none';
 										e.target.style.zIndex = 'auto';
 									}}
-									onClick={() => {
-										console.log('item clicked (' + i + ')');
-									}}
+									onClick={() => setGenreSelected(i)}
 								>
-									{el.genre}
+									{el}
 								</div>
 							)
 						})}
 					</div>
 				</div>
 
-				<HomeTabs />
+				<HomeTabs
+					tabEditTitle={genreList[genreSelected]}
+				/>
 			</div>
 		</div>
 	);

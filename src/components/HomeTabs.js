@@ -52,7 +52,9 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-export default function SimpleTabs() {
+export default function SimpleTabs({
+	tabEditTitle
+}) {
 	const classes = useStyles();
 	const [value, setValue] = React.useState(0);
 
@@ -75,7 +77,7 @@ export default function SimpleTabs() {
 			</AppBar>
 
 			<TabPanel value={value} index={0}>
-				<TabEdit />
+				<TabEdit tabEditTitle={tabEditTitle} />
 			</TabPanel>
 
 			<TabPanel value={value} index={1}>
