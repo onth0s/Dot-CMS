@@ -24,6 +24,9 @@ const theme = createMuiTheme({
 		primary: {
 			"500": "#EC6408",
 		},
+		secondary: {
+			"A400": "#EC6408",
+		},
 	},
 });
 
