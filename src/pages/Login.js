@@ -103,7 +103,7 @@ export default function Login() {
 	return (
 		<div className="root-container">
 			{/* TODO ↓ remove this */}
-			<DevSkip route={'/home/'} />
+			{/* <DevSkip route={'/home/'} /> */}
 
 			<div className="
 				flexbox container 
