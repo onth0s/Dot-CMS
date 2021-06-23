@@ -37,12 +37,12 @@
 
 .tab-edit-form-grid {
 	display: grid;
-	grid-template-columns: 25% 40% 10% 6% 19%;
-	column-gap: 15px;
+	grid-template-columns: 25% 60% 15%;
+	column-gap: 30px;
 
 	align-items: flex-end;
 
-	padding-right: calc(15px * 4);
+	padding-right: calc(30px * 3);
 	margin-bottom: 10px;
 }
 

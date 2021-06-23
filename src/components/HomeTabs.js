@@ -47,7 +47,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	test: {
 		color: 'black',
-		backgroundColor: 'var(--grey-lighter)',
+		// backgroundColor: 'var(--orange-light2)',
+		backgroundColor: 'transparent',
+		boxShadow: 'none',
 		borderRadius: 10,
 	}
 }));
@@ -81,11 +83,11 @@ export default function SimpleTabs({
 			</TabPanel>
 
 			<TabPanel value={value} index={1}>
-				Item Two
+				Under construction! Coming soon...
 			</TabPanel>
 
 			<TabPanel value={value} index={2}>
-				Item Three
+				Under construction! Coming soon...
 			</TabPanel>
 		</div>
 	);

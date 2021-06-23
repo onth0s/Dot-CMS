@@ -16,7 +16,6 @@ import { TextField, Button } from '@material-ui/core';
 import { icons } from '../resources/icons.js';
 
 import { store } from 'react-notifications-component';
-import DevSkip from '../components/DevSkip.js';
 
 export default function Login() {
 	const history = useHistory();

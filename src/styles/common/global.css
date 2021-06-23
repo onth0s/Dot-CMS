@@ -1,12 +1,17 @@
 :root {
+	--orange-dark: #ae4900;
 	--orange: #e6772b;
 	--orange-light: #ff802b;
+	--orange-light2: #ffa75a;
 	--orange-lighest: #ffdcc4;
-
+	
 	--blue: #6154c1;
+	--blue2: #6f65bb;
+	--blue-dark: #3E3B8A;
 	
 	--red: #ec0808;
 	
+	--grey: #888888;
 	--grey: #888888;
 	--grey-light: #bdbdbd;
 	--grey-lighter: #dbdbdb;
@@ -28,14 +33,18 @@
 }
 
 *::-webkit-scrollbar {
-	width: 5px;
+	width: 3px;
 }
 *::-webkit-scrollbar-thumb {
-	background-color: var(--grey-lighter);
+	background-color: var(--blue2);
 }
 /* *::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
  } */
+
+body {
+	background-color: var(--orange-light2);
+}
 
 ::selection {
 	background-color: var(--orange-lighest);
@@ -63,7 +72,7 @@
 .flexbox {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center;	
 }
 
 .root-container {

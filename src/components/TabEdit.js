@@ -89,37 +89,19 @@ export const TabEdit = ({ tabEditTitle }) => {
 	return (
 		<div className="flexbox tab-edit-container">
 			<div className="flexbox tab-edit-top">
-				<div className="tab-edit-title">{tabEditTitle}</div>
-				<Button onClick={handleUpload} classes={classes}><i className="fas fa-file-upload"></i></Button>
+				<div style={{
+					color: 'var(--blue-dark)', fontWeight: 400
+				}} className="tab-edit-title">{tabEditTitle}</div>
+				<Button onClick={handleUpload} classes={classes}><i style={{ color: 'var(--blue-dark)' }} className="fas fa-file-upload"></i></Button>
 			</div>
 
 			<div className="tab-edit-form">
 				<div className="tab-edit-form-grid">
-					<TextField id="standard-basic" label="Autor" autoComplete="off" />
-					<TextField id="standard-basic" label="Título" autoComplete="off" />
-					<TextField id="standard-basic" label="Tiempo" type="number" autoComplete="off" />
-
-					<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick2}
-					>{currentTime}</Button>
-
-					<Menu
-						id="simple-menu"
-						anchorEl={anchorEl2}
-						keepMounted
-						open={Boolean(anchorEl2)}
-						onClose={handleClose2}
-					>
-						{times.map((el, i) => (
-							<MenuItem key={i} onClick={() => handleClose2(i)}>{el}</MenuItem>
-						))}
-					</Menu>
-
-
-
-
-
+					<TextField id="standard-basic" label="Autor" autoComplete="off" color="secondary" />
+					<TextField id="standard-basic" label="Título" autoComplete="off " color="secondary" />
 
 					<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}
+						style={{ color: 'var(--blue2)', border: '1px solid var(--blue2)' }}
 					>{currentTipology}</Button>
 					<Menu
 						id="simple-menu"

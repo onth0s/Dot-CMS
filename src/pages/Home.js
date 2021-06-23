@@ -50,13 +50,13 @@ export default function Home() {
 					<div className="flexbox home-column-header">
 						<div className="flexbox home-column-header-image-container">
 							<img id="home-column-header-image" className="box-shadow-soft"
-								src="https://via.placeholder.com/100x100" alt="user profile"
+								src="./assets/Nur.webp" alt="user profile"
 							/>
 						</div>
 
 						<div className="flexbox home-column-header-info">
-							<p id="home-column-header-info-name">Nombre Completo Aquí</p>
-							<p id="home-column-header-info-subtitle">Lorem ipsum dolor sit amet </p>
+							<p id="home-column-header-info-name">Nur ul Qamar</p>
+							<p id="home-column-header-info-subtitle">Buena diseñadora, mejor persona.</p>
 						</div>
 
 						<Button id="home-column-header-menu-icon"
@@ -92,20 +92,25 @@ export default function Home() {
 							// if (i === genreSelected) {
 							// 	console.log(el + ' is selected');
 							// }
-							if (i === genreSelected) styles.borderColor = 'var(--orange)';
+							if (i === genreSelected) {
+								styles.borderLeftColor = 'var(--blue)';
+								styles.borderWidth = '3px';
+								styles.boxShadow =  '0 0 10px rgba(0, 0, 0, 0.2)';
+								styles.zIndex = '2';
+							}
 
 							return (
 								<div className="home-column-list-item" key={i}
 									style={styles}
 									onMouseEnter={(e) => {
-										e.target.style.boxShadow = i % 2 === 0
-											? '0 0 10px rgba(0, 0, 0, 0.4)'
-											: '0 0 10px rgba(0, 0, 0, 0.2)';
-										e.target.style.zIndex = '2';
+										// e.target.style.boxShadow = i % 2 === 0
+										// 	? '0 0 10px rgba(0, 0, 0, 0.2)'
+										// 	: '0 0 10px rgba(0, 0, 0, 0.2)';
+										// e.target.style.zIndex = '2';
 									}}
 									onMouseLeave={(e) => {
-										e.target.style.boxShadow = 'none';
-										e.target.style.zIndex = 'auto';
+										// e.target.style.boxShadow = 'none';
+										// e.target.style.zIndex = 'auto';
 									}}
 									onClick={() => setGenreSelected(i)}
 								>
