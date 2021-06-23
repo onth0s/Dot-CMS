@@ -23,8 +23,8 @@ export const TabEdit = ({ tabEditTitle }) => {
 	const notificationSettings = {
 		type: "info",
 		insert: "top",
-		container: "bottom-left",
-		animationIn: ["animate__animated", "animate__slideInLeft"],
+		container: "bottom-right",
+		animationIn: ["animate__animated", "animate__slideInRight"],
 		animationOut: ["animate__animated", "animate__fadeOut"],
 		dismiss: {
 			duration: 4000,

@@ -78,7 +78,7 @@ export default function Home() {
 								history.push('/login');
 
 								handleClose();
-							}}><p>Cerrar sesión</p></MenuItem>
+							}}><p>Cerrar sesión	</p></MenuItem>
 						</Menu>
 					</div>
 
