@@ -71,16 +71,14 @@ export default function Home() {
 							open={Boolean(anchorEl)}
 							onClose={handleClose}
 						>
-							<MenuItem onClick={handleClose}><p>Profile</p></MenuItem>
-
-							<MenuItem onClick={handleClose}><p>My account</p></MenuItem>
+							<MenuItem onClick={handleClose}><p>Mi perfil</p></MenuItem>
 
 							<Divider />
 							<MenuItem onClick={() => {
 								history.push('/login');
 
 								handleClose();
-							}}><p>Logout</p></MenuItem>
+							}}><p>Cerrar sesión</p></MenuItem>
 						</Menu>
 					</div>
 

@@ -94,9 +94,9 @@ body {
 }
 
 .notification__item--info {
-	background-color: var(--orange-light) !important;
-	border-color: var(--orange) !important;
+	background-color: var(--blue-dark) !important;
+	border-color: var(--blue2) !important;
 }
 .notification__item--info .notification__timer {
-	background-color: var(--orange-light) !important;
+	background-color: var(--blue-dark) !important;
 }

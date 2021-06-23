@@ -29,8 +29,8 @@ export default function Login() {
 	const notificationSettings = {
 		type: "info",
 		insert: "top",
-		container: "bottom-left",
-		animationIn: ["animate__animated", "animate__slideInLeft"],
+		container: "bottom-right",
+		animationIn: ["animate__animated", "animate__slideInRight"],
 		animationOut: ["animate__animated", "animate__fadeOut"],
 		dismiss: {
 			duration: 4000,
@@ -106,7 +106,9 @@ export default function Login() {
 
 			<div className="
 				flexbox container 
-				login-container">
+				login-container"
+				style={{backgroundColor: 'white'}}	
+			>
 				<div className="login-title">
 					<img src={icons.dot_logo_text} alt="Dot logo with text" />
 					<p>CMS</p>
@@ -115,7 +117,7 @@ export default function Login() {
 				<form className="flexbox login-form" onSubmit={handleSubmit}>
 					<div className="login-form-input-container">
 						<TextField className="login-form-username"
-							label="Username" variant="outlined"
+							label="Username" variant="outlined" color="secondary"
 							autoComplete={'off'} autoFocus={true} spellCheck={false}
 							onKeyPress={(e) => {
 								if (e.code === 'Enter') {
@@ -151,7 +153,7 @@ export default function Login() {
 
 					<div className="login-form-input-container">
 						<TextField className="login-form-password"
-							label="Password" variant="outlined"
+							label="Password" variant="outlined" color="secondary"
 							autoComplete={'off'} spellCheck={false}
 							type={
 								showPassword ? 'text' : 'password'
@@ -177,7 +179,7 @@ export default function Login() {
 
 					<Button variant="contained"
 						onClick={handleSubmit}
-						color="primary"
+						color="secondary"
 					>Login</Button>
 				</form>
 			</div>
