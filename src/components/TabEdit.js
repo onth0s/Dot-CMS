@@ -97,8 +97,8 @@ export const TabEdit = ({ tabEditTitle }) => {
 
 			<div className="tab-edit-form">
 				<div className="tab-edit-form-grid">
-					<TextField id="standard-basic" label="Autor" autoComplete="off" color="secondary" />
-					<TextField id="standard-basic" label="Título" autoComplete="off " color="secondary" />
+					<TextField label="Autor" autoComplete="off" color="secondary" />
+					<TextField label="Título" autoComplete="off " color="secondary" />
 
 					<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}
 						style={{ color: 'var(--blue2)', border: '1px solid var(--blue2)' }}
@@ -116,7 +116,7 @@ export const TabEdit = ({ tabEditTitle }) => {
 					</Menu>
 				</div>
 
-				<textarea id="area" name="w3review" autofocus placeholder="Aquí va el texto..." />
+				<textarea id="area" name="w3review" autoFocus placeholder="Aquí va el texto..." />
 			</div>
 		</div>
 	);
