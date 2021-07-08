@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { store } from 'react-notifications-component';
 
+import { uploadContent } from '../services';
+
 const useStyles = makeStyles({
 	root: {
 		width: '50px',
@@ -46,19 +48,6 @@ export const TabEdit = ({ tabEditTitle }) => {
 
 		setAnchorEl(null);
 	};
-	const [anchorEl2, setAnchorEl2] = useState(null);
-
-	const handleClick2 = (e) => setAnchorEl2(e.currentTarget);
-	const handleClose2 = (i) => {
-		if (typeof (i) !== 'number') {
-			setCurrentTime('minutos');
-		}
-		else {
-			setCurrentTime(times[i]);
-		}
-
-		setAnchorEl2(null);
-	};
 
 	const tipologies = [
 		'Microrelato',
@@ -67,17 +56,64 @@ export const TabEdit = ({ tabEditTitle }) => {
 		'Novela',
 		'Guion',
 	];
-	const times = [
-		'Minutos',
-		'Horas',
-	];
 
-	const [currentTime, setCurrentTime] = useState('minutos');
 	const [currentTipology, setCurrentTipology] = useState('Tipología');
 
+	const [currentAuthor, setCurrentAuthor] = useState('');
+	const [currentTitle, setCurrentTitle] = useState('');
+	const [currentText, setCurrentText] = useState('');
+
+	const getGenre = (genre) => {
+		// const gn = [
+		// 	'FABULA',
+		// 	'SCIFI',
+		// 	'HISTORICA',
+		// 	'ROMANCE',
+		// 	'FANTASIA',
+		// 	'SUSPENSE',
+		// 	'COMEDIA',
+		// 	'TRAGEDIA',
+		// 	'ACTUALIDAD',
+		// ];
+
+		switch (genre) {
+			case 'Romance':
+				return 'ROMANCE';
+			case 'Drama':
+				return 'TRAGEDIA';
+			case 'Fantasía':
+				return 'FANTASIA';
+			case 'Comedia':
+				return 'COMEDIA';
+			case 'Sci-Fi':
+				return 'SCIFI';
+			case 'Histórica':
+				return 'HISTORICA';
+			case 'Suspense':
+				return 'SUSPENSE';
+			case 'Fábula':
+				return 'FABULA';
+			case 'Actualidad':
+				return 'ACTUALIDAD';
+			default: return;
+		}
+	}
+
 	const handleUpload = () => {
+		const data = {
+			author: currentAuthor,
+			title: currentTitle,
 
+			genre: getGenre(tabEditTitle),
+			tipology: currentTipology,
 
+			score: 5,
+
+			text: currentText.trim().split('\n'),
+		}
+
+		uploadContent(data);
+		
 		store.addNotification({
 			...notificationSettings,
 			title: "Succes!",
@@ -85,6 +121,8 @@ export const TabEdit = ({ tabEditTitle }) => {
 			type: 'info'
 		});
 	}
+
+
 
 	return (
 		<div className="flexbox tab-edit-container">
@@ -97,8 +135,8 @@ export const TabEdit = ({ tabEditTitle }) => {
 
 			<div className="tab-edit-form">
 				<div className="tab-edit-form-grid">
-					<TextField label="Autor" autoComplete="off" color="secondary" />
-					<TextField label="Título" autoComplete="off " color="secondary" />
+					<TextField label="Autor" autoComplete="off" color="secondary" value={currentAuthor} onChange={(e) => setCurrentAuthor(e.target.value)} />
+					<TextField label="Título" autoComplete="off " color="secondary" value={currentTitle} onChange={(e) => setCurrentTitle(e.target.value)} />
 
 					<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}
 						style={{ color: 'var(--blue2)', border: '1px solid var(--blue2)' }}
@@ -116,7 +154,7 @@ export const TabEdit = ({ tabEditTitle }) => {
 					</Menu>
 				</div>
 
-				<textarea id="area" name="w3review" autoFocus placeholder="Aquí va el texto..." />
+				<textarea id="area" name="w3review" autoFocus placeholder="Aquí va el texto..." value={currentText} onChange={(e) => setCurrentText(e.target.value)}/>
 			</div>
 		</div>
 	);
